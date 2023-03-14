@@ -17,7 +17,7 @@
  	
  	<update id="update" parameterType="org.iclass.dto.NewMember">
 	 	UPDATE new_member
-		SET email=#{email}, hobbies=#{hobbies} 
+		SET email=#{email}, age=#{age} , address =#{address},hobbies=#{hobbies} 
 		WHERE id=#{id}
  	</update>
  	
@@ -42,7 +42,7 @@
  	<select id="login" parameterType="java.util.Map" 
  				resultType="org.iclass.dto.NewMember">  
  	<!-- key 이름 :"id","password" 2개를 저장한 Map -->
- 		SELECT id,name,email FROM new_member  
+ 		SELECT * FROM new_member  
  		WHERE id=#{id} and password=#{password}
  	</select>
  	

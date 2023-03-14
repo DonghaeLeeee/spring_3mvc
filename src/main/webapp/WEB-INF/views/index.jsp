@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,9 @@
 	<img alt="" src="resources/image/mymain.png" style="width:100%;height:100%;object-fit:cover;">
 </div>
 <h3>INDEX</h3>
+세션 애트리뷰트가 있을까요? session 애트리뷰트 : 
+<c:out value="${userid }"/>,<c:out value="${username }"/>,<c:out value="${location }"/>
+<br>
 <hr>
 <h4>Admin</h4>
 <ul>
@@ -20,7 +24,8 @@
 <h4>회원 서비스</h4>
 <ul>
 	<li><a href="join">회원가입</a></li>
-	<li><a href="login">로그인</a></li>
+	<li><a href="login">로그인</a> <a href="logout">로그아웃</a>
+			<c:out value="${member.name }"/>님 환영합니다. </li>
 	<li><a href="update">회원정보 수정</a></li>
 	<li><a href="delete">회원탈퇴</a></li>
 </ul>
@@ -45,6 +50,13 @@
 		<li>
 		<form action="spring2" method="post">
 			<input name="test"> <button>spring2 제출</button>
+		</form>
+	</li>
+	<li>
+		<form action="modelAttr">
+			<input placeholder="검색컬럼" value="${column }" name = "column">		
+			<input placeholder="검색단어" value="${text }" name = "text">		
+			<button>검색</button>
 		</form>
 	</li>
 </ul>

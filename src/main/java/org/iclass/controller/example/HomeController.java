@@ -1,4 +1,4 @@
-package org.iclass.controller;
+package org.iclass.controller.example;
 
 import java.security.Timestamp;
 import java.sql.Date;

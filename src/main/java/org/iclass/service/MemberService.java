@@ -25,7 +25,12 @@ public class MemberService {
 		Map<String, String> map= new HashMap<>();
 		map.put("id",userid);
 		map.put("password",password);
-		log.info("login map - {}",map);
+		log.info(password);
+		return dao.login(map);
+	}
+	
+	public NewMember login(Map<String, String> map) {
+		
 		return dao.login(map);
 	}
 	
@@ -40,5 +45,9 @@ public class MemberService {
 	public void insert(NewMember vo) {
 		//db 저장
 		dao.insert(vo);
+	}
+
+	public int update(NewMember vo) {
+		return dao.update(vo);
 	}
 }

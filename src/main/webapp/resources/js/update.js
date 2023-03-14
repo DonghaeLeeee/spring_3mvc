@@ -10,24 +10,10 @@
 
 function func_join() {
     const frm = document.forms[0]
-    const id = frm.id
-    const name = frm.name
     const email = frm.email
-    const password = frm.password
     const age = frm.age
     let isValid = true
 	
-	if(id.value=='') {
-        alert('아이디는 필수 입력입니다.')
-        id.focus()
-        isValid=false
-    }else
-    if(name.value=='') {
-        alert('이름은 필수 입력입니다.')
-        name.focus()
-        isValid=false
-    } else
-
     if(email.value=='') {
         alert('이메일은 필수 입력입니다.')
         email.focus()
@@ -35,14 +21,6 @@ function func_join() {
     } else
 
 	//4)이메일은 기호 @ 와 . 을 포함해야 합니다.  .은 마지막 위치 아니어야 합니다.
-	//  -> 잘못된 이메일형식체크
-	if(email.value.indexOf('@')==-1 || email.value.indexOf('.') == -1 ||
-	  email.value.endsWith('.') ) {
-		alert('이메일 형식 체크 실패입니다.')
-		email.focus()
-		isValid=false
-	} else
-
 	//5)
     //실제 이메일 주소는 형식이 위의 조건보다 복잡합니다. 계정문자열에 특수기호는 - _ . 만 포함. 
     //                  도메인이름에 기호는 사용못합니다. naver.com O na-ver.com X  333naver.com X(숫자로 시작)
@@ -67,14 +45,7 @@ $ 는 끝지정
 {n,m}는 n개 이상, m번 이하
 */
 
-//   if(regPassword.test(password.value)===false ) {
-
-    if(password.value.length < 4 ) {
-        alert('패스워드는 4글자 이상입니다.')
-        password.focus()
-        isValid=false
-    }else
-    
+   
     if(age.value <= 15 || age.value >= 99) {
         alert('나이는 15~99 범위의 값이어야 합니다.')
         age.focus()
